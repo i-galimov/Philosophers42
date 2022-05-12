@@ -6,7 +6,7 @@
 /*   By: phella <phella@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 15:57:57 by phella            #+#    #+#             */
-/*   Updated: 2022/05/10 18:12:29 by phella           ###   ########.fr       */
+/*   Updated: 2022/05/12 21:07:45 by phella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	*ft_check_ph(void *control)
 				u->check_death = 1;
 				if (u->flag == 0
 					|| (u->flag == 1 && u->rule[i].count_eat > 0))
-					printf("%ld %d died\n",
+					printf(RED"%ld %d died\n",
 						ft_time() - u->start_time, u->rule[i].id_ph);
 				return ((void *)0);
 			}

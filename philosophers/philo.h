@@ -6,7 +6,7 @@
 /*   By: phella <phella@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 15:58:31 by phella            #+#    #+#             */
-/*   Updated: 2022/05/10 17:53:47 by phella           ###   ########.fr       */
+/*   Updated: 2022/05/12 21:05:51 by phella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <unistd.h>
 # include <pthread.h>
 # include <sys/time.h>
+
+# define RED "\033[0;31m"
+# define GRN "\033[0;32m"
+# define YEL "\033[0;33m"
+# define BLU "\033[0;34m"
 
 typedef struct s_rules
 {

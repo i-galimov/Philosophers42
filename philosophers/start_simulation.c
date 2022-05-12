@@ -6,7 +6,7 @@
 /*   By: phella <phella@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 15:58:39 by phella            #+#    #+#             */
-/*   Updated: 2022/05/10 18:16:45 by phella           ###   ########.fr       */
+/*   Updated: 2022/05/12 21:11:48 by phella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	*ft_run_life_cycle(void *control)
 		else
 			pthread_mutex_lock(&u->rule[i - 1].mutex);
 		if (u->check_death == 0)
-			printf("%ld %d has taken a fork\n",
+			printf(YEL"%ld %d has taken a fork\n",
 				ft_time() - u->start_time, u->rule[i].id_ph);
 		pthread_mutex_lock(&u->rule[i].mutex);
 		if (u->check_death == 0)
-			printf("%ld %d has taken a fork\n",
+			printf(YEL"%ld %d has taken a fork\n",
 				ft_time() - u->start_time, u->rule[i].id_ph);
 		ft_life_cycle(&u->rule[i], u, i);
 	}
@@ -46,7 +46,7 @@ void	ft_life_cycle(t_rules *p, t_utils *u, int i)
 	pthread_mutex_lock(&u->lock);
 	p->last_eat = ft_time();
 	if (u->check_death == 0)
-		printf("%ld %d is eating\n", ft_time() - u->start_time, p->id_ph);
+		printf(GRN"%ld %d is eating\n", ft_time() - u->start_time, p->id_ph);
 	pthread_mutex_unlock(&u->lock);
 	ft_true_usleep(p->time_to_eat);
 	if (p->id_ph == 1)
@@ -57,13 +57,13 @@ void	ft_life_cycle(t_rules *p, t_utils *u, int i)
 	pthread_mutex_lock(&u->lock);
 	if ((u->flag == 0 && u->check_death == 0)
 		|| (u->check_death == 0 && u->flag == 1 && p->count_eat != 1))
-		printf("%ld %d is sleeping\n", ft_time() - u->start_time, p->id_ph);
+		printf(BLU"%ld %d is sleeping\n", ft_time() - u->start_time, p->id_ph);
 	pthread_mutex_unlock(&u->lock);
 	ft_true_usleep(p->time_to_sleep);
 	pthread_mutex_lock(&u->lock);
 	if ((u->flag == 0 && u->check_death == 0)
 		|| (u->check_death == 0 && u->flag == 1 && p->count_eat != 1))
-		printf("%ld %d is thinking\n", ft_time() - u->start_time, p->id_ph);
+		printf(BLU"%ld %d is thinking\n", ft_time() - u->start_time, p->id_ph);
 	pthread_mutex_unlock(&u->lock);
 	p->count_eat--;
 }
