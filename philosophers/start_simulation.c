@@ -6,7 +6,7 @@
 /*   By: phella <phella@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 15:58:39 by phella            #+#    #+#             */
-/*   Updated: 2022/05/13 20:23:12 by phella           ###   ########.fr       */
+/*   Updated: 2022/05/13 20:47:20 by phella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_run_life_cycle(void *control)
 	while (u->check_death != 1)
 	{
 		if (u->flag == 1 && u->rule[i].count_eat == 0)
-			return ((void *)0);
+			return (NULL);
 		if (u->rule[i].id_ph == 1)
 			pthread_mutex_lock(&u->rule[u->count - 1].mutex);
 		else
