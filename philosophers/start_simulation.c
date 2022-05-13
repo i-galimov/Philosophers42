@@ -6,7 +6,7 @@
 /*   By: phella <phella@student.21-school.ru>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 15:58:39 by phella            #+#    #+#             */
-/*   Updated: 2022/05/12 21:11:48 by phella           ###   ########.fr       */
+/*   Updated: 2022/05/13 20:23:12 by phella           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	*ft_run_life_cycle(void *control)
 				ft_time() - u->start_time, u->rule[i].id_ph);
 		ft_life_cycle(&u->rule[i], u, i);
 	}
-	return ((void *)0);
+	return (NULL);
 }
 
 void	ft_life_cycle(t_rules *p, t_utils *u, int i)
